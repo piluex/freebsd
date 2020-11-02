@@ -125,17 +125,8 @@ __DO_KERNELS?=yes
 # heartburn upgrading from older systems. The need for CC is done with new
 # make later in the build, and caching COMPILER_TYPE/VERSION is only an
 # optimization. Also sinclude it to be friendlier to foreign OS hosted builds.
-.if ${MAKE_VERSION} >= 20140620 && defined(.PARSEDIR)
 .sinclude <bsd.compiler.mk>
-.endif
 
-# Note: we use this awkward construct to be compatible with FreeBSD's
-# old make used in 10.0 and 9.2 and earlier.
-.if defined(MK_DIRDEPS_BUILD) && ${MK_DIRDEPS_BUILD} == "yes" && \
-    !make(showconfig) && !make(print-dir)
-# targets/Makefile plays the role of top-level
-.include "targets/Makefile"
-.else
 
 TGTS=	all all-man buildenv buildenvvars buildkernel buildworld \
 	check check-old check-old-dirs check-old-files check-old-libs \
@@ -780,4 +771,3 @@ MAKE_JOB_ERROR_TOKEN= no
 .endif
 .endif # bmake
 
-.endif				# DIRDEPS_BUILD
