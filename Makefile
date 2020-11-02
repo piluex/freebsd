@@ -115,12 +115,7 @@
 # For more information, see the build(7) manual page.
 #
 
-.if defined(UNIVERSE_TARGET) || defined(MAKE_JUST_WORLDS) || defined(WITHOUT_KERNELS)
-__DO_KERNELS=no
-.endif
-.if defined(MAKE_JUST_KERNELS) || defined(WITHOUT_WORLDS)
-__DO_WORLDS=no
-.endif
+
 __DO_WORLDS?=yes
 __DO_KERNELS?=yes
 
