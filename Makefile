@@ -125,7 +125,7 @@ __DO_KERNELS?=yes
 # heartburn upgrading from older systems. The need for CC is done with new
 # make later in the build, and caching COMPILER_TYPE/VERSION is only an
 # optimization. Also sinclude it to be friendlier to foreign OS hosted builds.
-.sinclude <bsd.compiler.mk>
+
 
 
 TGTS=	all all-man buildenv buildenvvars buildkernel buildworld \
